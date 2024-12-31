@@ -18,6 +18,8 @@ XDailyVouchers brings an engaging rewards system to your server, encouraging pla
 **Voucher System:**
 - Create custom vouchers
 - Multiple rewards per voucher
+- Support for both command and item rewards
+- Visual GUI for editing voucher contents
 - Flexible command execution
 - Admin distribution controls
 - Player redemption system with limits
@@ -31,6 +33,7 @@ XDailyVouchers brings an engaging rewards system to your server, encouraging pla
 ### Admin Commands:
 - `/xdv reload` - Reload configuration
 - `/xdv voucher <name>` - Create vouchers
+- `/xdv vgui <vouchername>` - Edit voucher items through GUI
 - `/xdv give <voucher> <player> [amount]` - Distribute vouchers
 - `/xdv dailyitem <day/week> <number>` - Set rewards
 - `/xdv active <vouchername> <maxusers> <maxvouchers>` - Enable redemption

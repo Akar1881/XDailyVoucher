@@ -16,6 +16,7 @@ public class CommandManager implements CommandExecutor, TabCompleter {
     private final XDailyVouchers plugin;
     private final DailyCommand dailyCommand;
     private final VoucherCommand voucherCommand;
+    private final VoucherGuiCommand voucherGuiCommand;
     private final GiveCommand giveCommand;
     private final DailyItemCommand dailyItemCommand;
     private final ActivateCommand activateCommand;
@@ -27,6 +28,7 @@ public class CommandManager implements CommandExecutor, TabCompleter {
         this.plugin = plugin;
         this.dailyCommand = new DailyCommand(plugin);
         this.voucherCommand = new VoucherCommand(plugin);
+        this.voucherGuiCommand = new VoucherGuiCommand(plugin);
         this.giveCommand = new GiveCommand(plugin);
         this.dailyItemCommand = new DailyItemCommand(plugin);
         this.activateCommand = new ActivateCommand(plugin);
@@ -60,6 +62,9 @@ public class CommandManager implements CommandExecutor, TabCompleter {
                     return true;
                 }
                 return voucherCommand.execute(sender, args[1]);
+
+            case "vgui":
+                return voucherGuiCommand.execute(sender, args);
 
             case "give":
                 if (args.length < 3) {
@@ -104,6 +109,7 @@ public class CommandManager implements CommandExecutor, TabCompleter {
             if (sender.hasPermission("xdv.admin")) {
                 commands.add("reload");
                 commands.add("voucher");
+                commands.add("vgui");
                 commands.add("give");
                 commands.add("dailyitem");
                 commands.add("active");
@@ -117,7 +123,8 @@ public class CommandManager implements CommandExecutor, TabCompleter {
                 .collect(Collectors.toList());
         } else if (args.length == 2 && (args[0].equalsIgnoreCase("active") || 
                                       args[0].equalsIgnoreCase("deactive") || 
-                                      args[0].equalsIgnoreCase("redeem"))) {
+                                      args[0].equalsIgnoreCase("redeem") ||
+                                      args[0].equalsIgnoreCase("vgui"))) {
             return plugin.getVoucherManager().getActiveVouchers().keySet().stream()
                 .filter(s -> s.toLowerCase().startsWith(args[1].toLowerCase()))
                 .collect(Collectors.toList());

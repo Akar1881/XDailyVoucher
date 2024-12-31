@@ -72,6 +72,41 @@ public class VoucherManager {
         }
     }
 
+    public List<ItemStack> getVoucherItems(String voucherName) {
+        File file = new File(vouchersFolder, voucherName + ".yml");
+        if (!file.exists()) return new ArrayList<>();
+
+        YamlConfiguration config = YamlConfiguration.loadConfiguration(file);
+        @SuppressWarnings("unchecked")
+        List<ItemStack> items = (List<ItemStack>) config.getList(voucherName + ".items", new ArrayList<>());
+        return items;
+    }
+
+    public void saveVoucherItems(String voucherName, List<ItemStack> items) {
+        File file = new File(vouchersFolder, voucherName + ".yml");
+        if (!file.exists()) return;
+
+        YamlConfiguration config = YamlConfiguration.loadConfiguration(file);
+        config.set(voucherName + ".items", items);
+        try {
+            config.save(file);
+        } catch (IOException e) {
+            plugin.getLogger().severe("Could not save voucher items: " + e.getMessage());
+        }
+    }
+
+    public void giveVoucherItems(Player player, String voucherName) {
+        List<ItemStack> items = getVoucherItems(voucherName);
+        if (items != null && !items.isEmpty()) {
+            for (ItemStack item : items) {
+                if (item != null) {
+                    player.getInventory().addItem(item.clone());
+                }
+            }
+            player.sendMessage("§aYou received your voucher items!");
+        }
+    }
+
     public boolean activateVoucher(String name) {
         File file = new File(vouchersFolder, name + ".yml");
         if (!file.exists()) return false;

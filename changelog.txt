@@ -1,0 +1,19 @@
+## [1.1.0] - 2024-12-30
+
+### Added
+- New `/xdv vgui` command to edit voucher items through a GUI interface
+- Support for adding custom items to vouchers
+- Visual interface for managing voucher rewards
+- Save and clear functionality in voucher GUI
+- Automatic item distribution when redeeming vouchers
+
+### Changed
+- Enhanced voucher system to support physical item rewards
+- Updated help messages to include new vgui command
+- Improved voucher redemption to handle both commands and items
+
+### Technical
+- Added VoucherItemsGui class for GUI management
+- Added VoucherItemsGuiListener for event handling
+- Extended VoucherManager with item storage capabilities
+- Added VoucherGuiCommand for command handling

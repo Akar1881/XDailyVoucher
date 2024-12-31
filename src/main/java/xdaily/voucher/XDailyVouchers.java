@@ -7,6 +7,7 @@ import xdaily.voucher.managers.DailyRewardManager;
 import xdaily.voucher.managers.DailyItemsManager;
 import xdaily.voucher.listeners.GuiListener;
 import xdaily.voucher.listeners.PlayerListener;
+import xdaily.voucher.listeners.VoucherItemsGuiListener;
 import xdaily.voucher.listeners.DailyItemsGuiListener;
 import xdaily.voucher.gui.GuiManager;
 import xdaily.voucher.data.UserData;
@@ -53,6 +54,7 @@ public class XDailyVouchers extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new GuiListener(this), this);
         getServer().getPluginManager().registerEvents(new PlayerListener(this), this);
         getServer().getPluginManager().registerEvents(new DailyItemsGuiListener(this), this);
+        getServer().getPluginManager().registerEvents(new VoucherItemsGuiListener(this), this);
     }
 
     public void reloadPlugin() {

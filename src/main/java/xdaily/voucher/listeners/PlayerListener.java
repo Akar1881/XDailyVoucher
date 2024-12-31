@@ -40,6 +40,9 @@ public class PlayerListener implements Listener {
                         );
                     }
                     
+                    // Give voucher items
+                    plugin.getVoucherManager().giveVoucherItems(player, voucher.getName());
+                    
                     // Remove one voucher from the player's hand
                     ItemStack handItem = player.getInventory().getItemInMainHand();
                     if (handItem.getAmount() > 1) {

@@ -5,6 +5,7 @@ xdaily\voucher\commands\usage\CommandUsage.class
 xdaily\voucher\models\Voucher.class
 xdaily\voucher\commands\subcommands\DailyCommand.class
 xdaily\voucher\data\UserData.class
+xdaily\voucher\listeners\VoucherItemsGuiListener.class
 xdaily\voucher\commands\subcommands\DeactivateCommand.class
 xdaily\voucher\commands\subcommands\VoucherCommand.class
 xdaily\voucher\listeners\PlayerListener.class
@@ -16,6 +17,8 @@ xdaily\voucher\XDailyVouchers.class
 xdaily\voucher\gui\DailyRewardItem.class
 xdaily\voucher\gui\GuiManager.class
 xdaily\voucher\data\RedeemData.class
+xdaily\voucher\commands\subcommands\VoucherGuiCommand.class
+xdaily\voucher\gui\VoucherItemsGui.class
 xdaily\voucher\commands\usage\CommandUsageManager.class
 xdaily\voucher\listeners\GuiListener.class
 xdaily\voucher\commands\subcommands\RedeemCommand.class

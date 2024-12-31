@@ -15,6 +15,7 @@ messages:
     - "&eXDailyVouchers Help"
     - "&7/xdv reload - Reload the plugin"
     - "&7/xdv voucher [name] - Create a voucher"
+    - "&7/xdv vgui [vouchername] - Edit voucher items"
     - "&7/xdv give [vouchername] [user] [amount] - Give a voucher"
     - "&7/xdv daily - Show daily rewards GUI"
     - "&7/xdv dailyitem <day/week> <number> - Set daily/weekly item rewards"

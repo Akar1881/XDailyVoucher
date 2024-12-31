@@ -13,6 +13,8 @@ A comprehensive daily rewards and voucher system plugin for Minecraft servers ru
 
 ### Voucher System
 - Create custom vouchers with multiple rewards
+- Support for both command and item rewards
+- Visual GUI for editing voucher contents
 - Flexible command execution system
 - Admin controls for voucher distribution
 - Voucher redemption system with limits
@@ -23,6 +25,7 @@ A comprehensive daily rewards and voucher system plugin for Minecraft servers ru
 ### Admin Commands
 - `/xdv reload` - Reload the plugin configuration
 - `/xdv voucher <name>` - Create a new voucher
+- `/xdv vgui <vouchername>` - Edit voucher items through GUI
 - `/xdv give <voucher> <player> [amount]` - Give vouchers to players
 - `/xdv dailyitem <day/week> <number>` - Set daily/weekly item rewards
 - `/xdv active <vouchername> <maxusers> <maxvouchers>` - Activate voucher for redemption
