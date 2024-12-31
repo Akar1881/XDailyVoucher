@@ -1,25 +1,26 @@
 package xdaily.voucher.models;
 
 import org.bukkit.Material;
+import java.util.List;
 
 public class Voucher {
     private final String name;
     private final String display;
     private final Material itemType;
-    private final String command;
-    private final String reward;
+    private final List<String> commands;
+    private final List<String> rewards;
 
-    public Voucher(String name, String display, Material itemType, String command, String reward) {
+    public Voucher(String name, String display, Material itemType, List<String> commands, List<String> rewards) {
         this.name = name;
         this.display = display;
         this.itemType = itemType;
-        this.command = command;
-        this.reward = reward;
+        this.commands = commands;
+        this.rewards = rewards;
     }
 
     public String getName() { return name; }
-    public String getDisplay() { return display; }
+    public String getDisplay() { return display.replace("&", "§"); }
     public Material getItemType() { return itemType; }
-    public String getCommand() { return command; }
-    public String getReward() { return reward; }
+    public List<String> getCommands() { return commands; }
+    public List<String> getRewards() { return rewards; }
 }

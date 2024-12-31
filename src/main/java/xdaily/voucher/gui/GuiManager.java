@@ -1,78 +1,77 @@
 package xdaily.voucher.gui;
 
-import xdaily.voucher.XDailyVouchers;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import xdaily.voucher.XDailyVouchers;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class GuiManager {
     private final XDailyVouchers plugin;
+    private final Map<Integer, Integer> slotDayMap;
+    private final DailyRewardItem dailyRewardItem;
+    private static final int STATUS_SLOT = 35;
 
     public GuiManager(XDailyVouchers plugin) {
         this.plugin = plugin;
+        this.slotDayMap = new HashMap<>();
+        this.dailyRewardItem = new DailyRewardItem(plugin);
+        initializeDaySlots();
+    }
+
+    private void initializeDaySlots() {
+        slotDayMap.put(19, 1); // Day 1
+        slotDayMap.put(11, 2); // Day 2
+        slotDayMap.put(21, 3); // Day 3
+        slotDayMap.put(13, 4); // Day 4
+        slotDayMap.put(23, 5); // Day 5
+        slotDayMap.put(15, 6); // Day 6
+        slotDayMap.put(25, 7); // Day 7
     }
 
     public void openDailyRewardsGui(Player player) {
         Inventory gui = Bukkit.createInventory(null, 36, "Daily Rewards");
-        
-        for (int i = 0; i < 35; i++) {
-            ItemStack item = createDayItem(i + 1);
-            gui.setItem(i, item);
+
+        // Set daily reward items
+        for (Map.Entry<Integer, Integer> entry : slotDayMap.entrySet()) {
+            gui.setItem(entry.getKey(), dailyRewardItem.create(player, entry.getValue()));
         }
 
-        // Streak information in last slot
-        gui.setItem(35, createStreakItem(player));
-        
+        // Set player status item
+        gui.setItem(STATUS_SLOT, createStatusItem(player));
+
         player.openInventory(gui);
     }
 
-    private ItemStack createDayItem(int day) {
-        ItemStack item = new ItemStack(Material.GOLD_INGOT);
-        ItemMeta meta = item.getItemMeta();
-        if (meta != null) {
-            meta.setDisplayName("§6Day " + day);
-            List<String> lore = new ArrayList<>();
-            lore.add("§7Reward: " + calculateReward(day));
-            meta.setLore(lore);
-            item.setItemMeta(meta);
-        }
-        return item;
-    }
-
-    private ItemStack createStreakItem(Player player) {
+    private ItemStack createStatusItem(Player player) {
         ItemStack item = new ItemStack(Material.DIAMOND);
         ItemMeta meta = item.getItemMeta();
         if (meta != null) {
-            meta.setDisplayName("§bYour Streak");
+            meta.setDisplayName("§bYour Status");
             List<String> lore = new ArrayList<>();
-            lore.add("§7Current streak: " + getCurrentStreak(player));
-            lore.add("§7Multiplier: " + getMultiplier(player));
+            int streak = plugin.getUserData().getStreak(player.getUniqueId());
+            int week = (streak / 7) + 1;
+            lore.add("§7Current streak: " + streak + " days");
+            lore.add("§7Current week: " + week);
+            lore.add("§7Multiplier: " + String.format("%.1fx", 1 + (streak / 7) * 0.1));
             meta.setLore(lore);
             item.setItemMeta(meta);
         }
         return item;
     }
 
-    private String calculateReward(int day) {
-        double baseReward = plugin.getConfig().getDouble("dailyreward", 100);
-        double multiplier = 1 + (day / 7) * plugin.getConfig().getDouble("strikreward", 0.1);
-        return String.format("%.0f", baseReward * multiplier);
+    public boolean isRewardSlot(int slot) {
+        return slotDayMap.containsKey(slot);
     }
 
-    private int getCurrentStreak(Player player) {
-        // This should be implemented to get the actual streak from DailyRewardManager
-        return 0;
-    }
-
-    private String getMultiplier(Player player) {
-        int streak = getCurrentStreak(player);
-        double multiplier = 1 + (streak / 7) * plugin.getConfig().getDouble("strikreward", 0.1);
-        return String.format("%.1fx", multiplier);
+    public int getDayFromSlot(int slot) {
+        return slotDayMap.getOrDefault(slot, -1);
     }
 }

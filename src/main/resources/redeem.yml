@@ -1,0 +1,9 @@
+# Voucher redemption data
+# Format:
+# vouchername:
+#   active: true/false
+#   maxUsers: number
+#   maxVouchers: number
+#   redeemedUsers:
+#     - uuid1
+#     - uuid2

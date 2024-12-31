@@ -1,0 +1,71 @@
+# XDailyVouchers
+
+A feature-rich daily rewards and voucher system for your Minecraft server!
+
+## 📚 Overview
+
+XDailyVouchers brings an engaging rewards system to your server, encouraging player retention through daily login rewards and a flexible voucher system.
+
+### ✨ Features
+
+**Daily Rewards:**
+- Progressive rewards with streak bonuses
+- Custom rewards for each day
+- Special weekly rewards
+- Visual GUI interface
+- Persistent streak tracking
+
+**Voucher System:**
+- Create custom vouchers
+- Multiple rewards per voucher
+- Flexible command execution
+- Admin distribution controls
+- Player redemption system with limits
+
+## 🎮 Usage
+
+### Player Commands:
+- `/xdv daily` - Open daily rewards GUI
+- `/xdv redeem <vouchername>` - Redeem available vouchers
+
+### Admin Commands:
+- `/xdv reload` - Reload configuration
+- `/xdv voucher <name>` - Create vouchers
+- `/xdv give <voucher> <player> [amount]` - Distribute vouchers
+- `/xdv dailyitem <day/week> <number>` - Set rewards
+- `/xdv active <vouchername> <maxusers> <maxvouchers>` - Enable redemption
+- `/xdv deactive <vouchername>` - Disable redemption
+
+## 📋 Requirements
+
+- Paper 1.17+
+- Vault
+
+## ⚙️ Configuration
+
+Easily customize through `config.yml`:
+- Base reward amounts
+- Streak multipliers
+- All messages and notifications
+
+## 🔒 Permissions
+
+- `xdv.admin` - Administrative access
+- `xdv.use` - Basic player access (default: true)
+
+## 🔧 Installation
+
+1. Download the plugin
+2. Place in plugins folder
+3. Restart server
+4. Configure settings
+
+## 🤝 Support
+
+Need help? Found a bug? Have a suggestion?
+- Create an issue on our [GitHub](https://github.com/Akar1881/xdailyvouchers)
+- Join our Discord community [optional: add Discord link]
+
+## 📝 License
+
+Released under the MIT License
