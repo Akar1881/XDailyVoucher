@@ -1,0 +1,19 @@
+# XDailyVouchers Configuration
+
+# Daily reward base amount
+dailyreward: 100
+
+# Streak reward multiplier (0.1 = 10% increase per week)
+strikreward: 0.1
+
+# Messages
+messages:
+  reload: "&aPlugin configuration reloaded."
+  help:
+    - "&eXDailyVouchers Help"
+    - "&7/xdv reload - Reload the plugin"
+    - "&7/xdv voucher [name] - Create a voucher"
+    - "&7/xdv active [vouchername] - Activate a voucher"
+    - "&7/xdv deactive [vouchername] - Deactivate a voucher"
+    - "&7/xdv give [vouchername] [user] [amount] - Give a voucher"
+    - "&7/xdv daily show - Show daily rewards GUI"

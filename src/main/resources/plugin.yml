@@ -1,0 +1,17 @@
+name: XDailyVouchers
+version: 1.0
+main: xdaily.voucher.XDailyVouchers
+api-version: 1.17
+depend: [Vault]
+commands:
+  xdv:
+    description: XDailyVouchers main command
+    usage: /<command> [reload|voucher|give|daily]
+    aliases: [xdailyvouchers]
+permissions:
+  xdv.admin:
+    description: Allows access to admin commands
+    default: op
+  xdv.use:
+    description: Allows using vouchers and daily rewards
+    default: true
