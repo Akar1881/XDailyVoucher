@@ -57,10 +57,11 @@ strikreward: 0.1
 
 ## Installation
 
-1. Download the latest release
+1. Download the latest release from [Modrinth](https://modrinth.com/project/xmobgeneration/)
 2. Place the jar file in your plugins folder
 3. Restart your server
 4. Configure the plugin in `config.yml`
+5. You can download latest release on github releases.
 
 ## Support
 
