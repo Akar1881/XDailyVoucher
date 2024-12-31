@@ -7,6 +7,7 @@ xdaily\voucher\commands\subcommands\DailyCommand.class
 xdaily\voucher\data\UserData.class
 xdaily\voucher\listeners\VoucherItemsGuiListener.class
 xdaily\voucher\commands\subcommands\DeactivateCommand.class
+xdaily\voucher\commands\subcommands\VoucherListCommand.class
 xdaily\voucher\commands\subcommands\VoucherCommand.class
 xdaily\voucher\listeners\PlayerListener.class
 xdaily\voucher\commands\CommandManager.class

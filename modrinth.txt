@@ -38,6 +38,7 @@ XDailyVouchers brings an engaging rewards system to your server, encouraging pla
 - `/xdv dailyitem <day/week> <number>` - Set rewards
 - `/xdv active <vouchername> <maxusers> <maxvouchers>` - Enable redemption
 - `/xdv deactive <vouchername>` - Disable redemption
+- `/xdv vlist` - List all vouchers
 
 ## 📋 Requirements
 

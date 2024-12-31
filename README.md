@@ -30,6 +30,7 @@ A comprehensive daily rewards and voucher system plugin for Minecraft servers ru
 - `/xdv dailyitem <day/week> <number>` - Set daily/weekly item rewards
 - `/xdv active <vouchername> <maxusers> <maxvouchers>` - Activate voucher for redemption
 - `/xdv deactive <vouchername>` - Deactivate voucher redemption
+- `/xdv vlist` - List all vouchers
 
 ### Player Commands
 - `/xdv daily` - Open daily rewards GUI

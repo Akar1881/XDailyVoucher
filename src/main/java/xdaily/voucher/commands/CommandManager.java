@@ -17,6 +17,7 @@ public class CommandManager implements CommandExecutor, TabCompleter {
     private final DailyCommand dailyCommand;
     private final VoucherCommand voucherCommand;
     private final VoucherGuiCommand voucherGuiCommand;
+    private final VoucherListCommand voucherListCommand;
     private final GiveCommand giveCommand;
     private final DailyItemCommand dailyItemCommand;
     private final ActivateCommand activateCommand;
@@ -29,6 +30,7 @@ public class CommandManager implements CommandExecutor, TabCompleter {
         this.dailyCommand = new DailyCommand(plugin);
         this.voucherCommand = new VoucherCommand(plugin);
         this.voucherGuiCommand = new VoucherGuiCommand(plugin);
+        this.voucherListCommand = new VoucherListCommand(plugin);
         this.giveCommand = new GiveCommand(plugin);
         this.dailyItemCommand = new DailyItemCommand(plugin);
         this.activateCommand = new ActivateCommand(plugin);
@@ -65,6 +67,9 @@ public class CommandManager implements CommandExecutor, TabCompleter {
 
             case "vgui":
                 return voucherGuiCommand.execute(sender, args);
+
+            case "vlist":
+                return voucherListCommand.execute(sender);
 
             case "give":
                 if (args.length < 3) {
@@ -110,6 +115,7 @@ public class CommandManager implements CommandExecutor, TabCompleter {
                 commands.add("reload");
                 commands.add("voucher");
                 commands.add("vgui");
+                commands.add("vlist");
                 commands.add("give");
                 commands.add("dailyitem");
                 commands.add("active");
