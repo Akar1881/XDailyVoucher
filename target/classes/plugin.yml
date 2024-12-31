@@ -1,7 +1,7 @@
 name: XDailyVouchers
 version: 1.0
 main: xdaily.voucher.XDailyVouchers
-api-version: '1.20'
+api-version: '1.17'
 depend: [Vault]
 commands:
   xdv:
