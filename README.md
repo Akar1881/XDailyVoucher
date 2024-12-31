@@ -65,7 +65,7 @@ strikreward: 0.1
 ## Support
 
 If you encounter any issues or have suggestions:
-1. Check the [Issues](https://github.com/Akar1881/xdailyvouchers/issues) page
+1. Check the [Issues](https://github.com/Akar1881/XDailyVoucher/issues) page
 2. Create a new issue if your problem isn't already reported
 
 ## License
