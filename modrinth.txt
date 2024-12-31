@@ -64,8 +64,7 @@ Easily customize through `config.yml`:
 
 Need help? Found a bug? Have a suggestion?
 - Create an issue on our [GitHub](https://github.com/Akar1881/xdailyvouchers)
-- Join our Discord community [optional: add Discord link]
 
 ## 📝 License
 
-Released under the MIT License
+Released under the GNU License
